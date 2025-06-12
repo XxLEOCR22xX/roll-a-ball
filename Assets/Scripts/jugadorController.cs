@@ -57,6 +57,13 @@ public class jugadorController : MonoBehaviour
 
     void LoadNextLevel()
     {
+        if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            textoGanar.text = "¡Ganaste! Volviendo al menú...";
+            Invoke("RestartLevel", 5f); // Espera 3 segundos antes de reiniciar
+        
+            return;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -74,7 +81,7 @@ void Update()
     {
         textoTiempo.text = "Tiempo: 0";
         textoTiempo.color = Color.red; // Forzamos rojo final por seguridad
-        textoGanar.text = "¡Perdiste! Se ha agotado el tiempo.";
+        textoGanar.text = "¡Perdiste!.";
         Invoke("RestartLevel", 3f);
         enabled = false;
     }
@@ -92,7 +99,7 @@ void Update()
 // Función para reiniciar el nivel
 void RestartLevel()
 {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    UnityEngine.SceneManagement.SceneManager.LoadScene(0); 
 }
 
     void setTextoContador()

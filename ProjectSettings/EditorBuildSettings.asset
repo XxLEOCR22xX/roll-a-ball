@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: 23c7ac96558f8b147b2bae80e422488e
   - enabled: 1
+    path: Assets/Scenes/contoles.unity
+    guid: 147226dccba37584fbb9edd8523eec3c
+  - enabled: 1
     path: Assets/Scenes/nivel0.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
